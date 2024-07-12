@@ -10,6 +10,7 @@ import CourseDistinction from "@/components/courseDistinction/CourseDistinction"
 import Testimonials from "@/components/testimonial/Testimonials";
 import Statistics from "@/components/statistics/Statistics";
 import { LinkBtn } from "@/components/button/LinkBtn";
+import FramerAnimation from "@/utils/framer-animation";
 
 
 
@@ -53,17 +54,17 @@ export default function Home() {
         </motion.div>
       </div>
       <Space border="md:hidden lg:block" />
-      <div className="bg-[#eee] ">
+      <FramerAnimation className="bg-[#eee] ">
         <PopularCourses />
         <Space border="md:hidden lg:block" />
-      </div>
+      </FramerAnimation>
       <Statistics />
       <Space border="md:hidden lg:block" />
       <CourseDistinction />
       <Space border="md:hidden lg:block" />
 
       <Testimonials />
-      <div className="bg-backgrounds my-10 p-8 md:p-14 flex flex-col gap-10 md:flex-row justify-between items-center">
+      <FramerAnimation className="bg-backgrounds my-10 p-8 md:p-14 flex flex-col gap-10 md:flex-row justify-between items-center">
         <h1 className="text-white w-full md:w-1/2 lg:w-2/5 mx-auto md:mx-0 text-2xl md:text-3xl">
           Ready to kickstart your career?
         </h1>
@@ -76,7 +77,7 @@ export default function Home() {
         >
           Click here to register
         </LinkBtn>
-      </div>
+      </FramerAnimation>
     </main>
   );
 }

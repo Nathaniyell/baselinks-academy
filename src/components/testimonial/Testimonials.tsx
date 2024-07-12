@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import TestimonialCard from './TestimonialCard'; 
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import FramerAnimation from '@/utils/framer-animation';
 
 const testimonials = [
   { name: 'John Doe', image: '', testimonial: 'This platform is amazing!', role: "photographer" },
@@ -17,7 +18,7 @@ const Testimonials: React.FC = () => {
   const swiperRef = useRef<any>(null);
 
   return (
-    <div className="w-11/12 md:w-10/12 mx-auto">
+    <FramerAnimation className="w-11/12 md:w-10/12 mx-auto">
       <h2 className="text-3xl text-center font-bold mb-6 md:mb-10 text-titles">Testimonials</h2>
       <Swiper
         modules={[Autoplay]}
@@ -54,7 +55,7 @@ const Testimonials: React.FC = () => {
           </button>
         </div>
       </aside>
-    </div>
+    </FramerAnimation>
   );
 };
 

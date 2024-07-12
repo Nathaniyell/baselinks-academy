@@ -11,6 +11,7 @@ const PopularCourses: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 md:gap-12">
         {popularCourses.map((course, index) => (
           <CourseCard
+          id={course.id}
             key={index}
             title={course.title}
             description={course.description}
