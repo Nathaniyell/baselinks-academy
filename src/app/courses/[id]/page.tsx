@@ -1,52 +1,79 @@
-"use client"
-import { useParams } from 'next/navigation';
-import { useDocumentData } from 'react-firebase-hooks/firestore';
-import { doc } from 'firebase/firestore';
-import { db } from '@/config/firebase-config'; 
 
-const CoursePage = () => {
-  const { id } = useParams();
+import { FaStar } from 'react-icons/fa';
+import { courses } from '@/lib/courses';
+import { CourseType } from '@/utils/courseTypes';
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import Breadcrumb from '@/components/breadcrumb/Breadcrumb';
+import { BiUser } from 'react-icons/bi';
+import Space from '@/components/Space';
 
-  // Ensure the id is available before attempting to fetch the document
-  const courseRef = id ? doc(db, 'courses', id as string) : null;
-  const [course, loading, error] = useDocumentData(courseRef);
+interface CourseDetailProps {
+  params: { id: string };
+}
 
-  if (loading) {
-    return <div>Loading...</div>;
+const getCourseById = (id: string): CourseType | undefined => {
+  return courses.find((course: CourseType) => course.id.toString() === id);
+};
+
+const CourseDetail = ({ params }: CourseDetailProps) => {
+  const course = getCourseById(params.id);
+
+  if (!course) {
+    notFound();
+    return null;
   }
-
-  if (error) {
-    return <div>Error loading course.</div>;
-  }
-
-  // if (!course) {
-  //   return <div>No course found.</div>;
-  // }
-  console.log(course)
 
   return (
-    <div className="container mx-auto py-10">
-      <h1 className="text-3xl font-bold mb-8">{course?.title}</h1>
-      <div className="mb-8">
-        <video controls width="100%">
-          <source src={course?.videoLink}  type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+    <>
+      <Breadcrumb previousPage='Courses' previousPageLink='/courses' currentPage={`${course.title}`} />
+      <div className="flex flex-col lg:flex-row gap-8 mt-2">
+        <div className="w-full lg:w-2/3 bg-[#eff5f5] ">
+        <div className="w-11/12 lg:w-3/4 pt-4 mx-auto">
+            <h1 className="text-xl font-semibold mb-4">{course.title}</h1>
+            <p className="text-gray-700 mb-6">{course.description}</p>
+          
+            <div className="mb-6 flex items-center">
+              {Array(course.stars).fill(0).map((_, index) => (
+                <FaStar key={index} className="text-yellow-500" />
+              ))}
+              <span className="ml-6 space-x-2 text-lightBg flex gap-2 items-center"><BiUser />{course.students} students</span>
+            </div>
+          </div>
+          <div className='bg-white w-full lg:pt-4 lg:pb-10'>
+          <div className="video-section w-11/12 lg:w-3/4 mx-auto">
+            <video className="w-full" controls>
+              <source src={course.videoLink} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          </div>
+        </div>
+        <div className="w-full lg:w-1/3 lg:mr-10">
+          <div className="bg-white p-6 shadow border border-slate-200 grid gap-6">
+            <div>
+         <h1>Course Materials</h1>
+         <Link href="" download>Material 1</Link>
+         <Link href="" download>Material 2</Link>
+         <Link href="" download>Material 3</Link>
+         </div>
+            <div>
+         <h1>Quiz</h1>
+         <Link href="" download>Material 1</Link>
+        
+         </div>
+            <div>
+         <h1>Exerceise</h1>
+         <Link href="" download>Material 1</Link>
+        
+         </div>
+          </div>
+        </div>
       </div>
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-4">Quizzes</h2>
-        {/* Add quizzes here */}
-      </div>
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-4">Downloadable Materials</h2>
-        {/* Add downloadable materials here */}
-      </div>
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-4">Interactive Exercises</h2>
-        {/* Add interactive exercises here */}
-      </div>
-    </div>
+      <Space border="md:hidden lg:block" />
+      </>
+    
   );
 };
 
-export default CoursePage;
+export default CourseDetail;

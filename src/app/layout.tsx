@@ -32,6 +32,7 @@ export default function RootLayout({
           
           <Space border=" h-[2rem] md:h-[5rem] lg:h-[3.8rem] xs:h-[7rem]" />
           {children}
+          <Space border=" h-[2rem] md:h-[5rem] lg:h-[3.8rem] xs:h-[7rem]" />
 
                           <Footer />
         </body>

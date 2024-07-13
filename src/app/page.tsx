@@ -21,7 +21,7 @@ export default function Home() {
         <motion.div
           animate={{ x: 0, opacity: 1 }}
           initial={{ opacity: 0, x: -100 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
+          transition={{ delay: 0.1, duration: 0.8 }}
           className="p-4 lg:w-1/2 xl:w-3/5 grid grid-cols-1 gap-2 lg:gap-6"
         >
           <h1 className="text-2xl md:text-4xl flex flex-col gap-2 md:gap-6 text-titles">
@@ -43,7 +43,7 @@ export default function Home() {
         <motion.div
           animate={{ x: 0, opacity: 1 }}
           initial={{ opacity: 0, x: 100 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
+          transition={{ delay: 0.1, duration: 0.8 }}
           className="md:flex md:justify-end md:items-center"
         >
           <Image
@@ -64,20 +64,7 @@ export default function Home() {
       <Space border="md:hidden lg:block" />
 
       <Testimonials />
-      <FramerAnimation className="bg-backgrounds my-10 p-8 md:p-14 flex flex-col gap-10 md:flex-row justify-between items-center">
-        <h1 className="text-white w-full md:w-1/2 lg:w-2/5 mx-auto md:mx-0 text-2xl md:text-3xl">
-          Ready to kickstart your career?
-        </h1>
-
-        <LinkBtn
-          href="/auth/register"
-          variant="transparent"
-          className="text-white  shadow-md !text-2xl !text-center"
-          arrow
-        >
-          Click here to register
-        </LinkBtn>
-      </FramerAnimation>
+      
     </main>
   );
 }

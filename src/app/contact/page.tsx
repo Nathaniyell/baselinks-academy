@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import Space from "@/components/Space";
 import Link from "next/link";
 import { useRef, FormEvent } from "react";
+import Breadcrumb from "@/components/breadcrumb/Breadcrumb";
 
 
 
@@ -41,7 +42,7 @@ const Page = () => {
   };
   return (
     <div>
-
+<Breadcrumb currentPage="Contact" />
       <motion.section
         whileInView={{ y: 0, opacity: 1 }}
         initial={{ opacity: 0, y: 100 }}

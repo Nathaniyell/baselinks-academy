@@ -31,16 +31,15 @@ export default function Search() {
   }, 600);
 
   return (
-    <div className="relative w-full gap items-center">
-      <BiSearch size={20} className="absolute z-10 left-3 top-1/2 transform -translate-y-1/2 text-lightBg" />
-      <input
-        name="search"
-        placeholder="Search for courses"
-        className="peer indent-6 border placeholder:text-lightBg bg-gray-100/70 w-full shrink-0 pl-6 text-[0.96rem] text-lightBg p-2 focus:outline-none focus:ring-1 focus:ring-titles ring-offset-3 xs:placeholder:text-sm"
-        onChange={(e) => handleSearch(e.target.value)}
-        required
-      />
- 
-    </div>
+    <div className="relative w-full items-center">
+    <BiSearch size={20} className="absolute z-10 left-3 top-1/2 transform -translate-y-1/2 text-lightBg" />
+    <input
+      name="search"
+      placeholder="Search for courses"
+      className="pl-10 border placeholder:text-lightBg bg-gray-100/70 w-full shrink-0 text-[0.96rem] text-lightBg p-2 focus:outline-none focus:ring-1 focus:ring-titles ring-offset-3 xs:placeholder:text-sm"
+      onChange={(e) => handleSearch(e.target.value)}
+      required
+    />
+  </div>
   );
 }

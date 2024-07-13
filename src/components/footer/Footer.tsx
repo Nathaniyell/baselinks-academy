@@ -7,6 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Space from "@/components/Space";
 import { motion } from "framer-motion";
+import { LinkBtn } from "../button/LinkBtn";
+import FramerAnimation from "@/utils/framer-animation";
 
 
 
@@ -38,41 +40,62 @@ function Footer() {
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       transition={{ delay: 2, duration: 1 }}
-      className="bg-[#eee]"
+      className="bg-backgrounds"
     >
+      <FramerAnimation className="text-white border-b p-8 md:p-14 flex flex-col gap-10 md:flex-row justify-between items-center">
+        <h1 className="text-white w-full md:w-1/2 lg:w-2/5 mx-auto md:mx-0 text-2xl md:text-3xl">
+     Start learning with 1000 students around the world!
+        </h1>
+<div className="flex items-cener gap-6">
+        <LinkBtn
+          href="/auth/register"
+          variant="titles"
+          className="text-white  shadow-md rounded border-lightBg"
+          >
+        Get started
+        </LinkBtn>
+        <LinkBtn
+          href="/auth/register"
+          variant="background2"
+          className="text-white  shadow-md  rounded border-lightBg"
+          >
+         Browse all courses
+        </LinkBtn>
+        </div>
+      </FramerAnimation>
 
       <Space />
-      <div className="p-4 text-lightBg shadow-transparent shadow-2xl">
+      <div className="p-4 text-[#eee] shadow-transparent shadow-2xl">
         <footer className="grid grid-cols-1 gap-8 md:gap-4 md:grid-cols-2 lg:grid-cols-3 md:px-10">
-          <div className="text-lightBg text-base flex flex-col gap-4 md:gap-6 hover:bg-black hover:bg-opacity-10 p-4 rounded-md">
-            <h4 className="font-semibold text-titles text-2xl">About Baselinks Academy</h4>
+          <div className="text-[#eee] text-base flex flex-col gap-4 md:gap-6 hover:bg-black hover:bg-opacity-10 p-4 rounded-md">
+            <h4 className="font-semibold text-white text-2xl">About Baselinks Academy</h4>
             <p className="text-base">
               Baselinks Academy is a robust, user-friendly online learning platform designed to empower individuals by providing access to in-demand creative and technical skills. As Baselinks&apos; flagship tool, it democratizes education and supports aspiring learners with a comprehensive course library, interactive learning experiences, and community features.
             </p>
           </div>
-          <div className="text-lightBg text-base flex flex-col gap-4 md:gap-6 capitalize hover:bg-black hover:bg-opacity-10 p-4 rounded-md">
-            <h4 className="font-semibold text-titles text-2xl">Quick Links</h4>
-            <Link href="" className="hover:underline hover:text-titles">
+          <div className="text-[#eee] text-base flex flex-col gap-4 md:gap-6 capitalize hover:bg-black hover:bg-opacity-10 p-4 rounded-md">
+            <h4 className="font-semibold text-white text-2xl">Quick Links</h4>
+            <Link href="" className="hover:underline hover:text-white">
               <span>Terms of use</span>
             </Link>
-            <Link href="" className="hover:underline hover:text-titles">
+            <Link href="" className="hover:underline hover:text-white">
               <span>Cookies</span>
             </Link>
-            <Link href="" className="hover:underline hover:text-titles">
+            <Link href="" className="hover:underline hover:text-white">
               <span>Privacy Policy</span>
             </Link>
           </div>
-          <div className="text-lightBg text-base flex flex-col gap-4 md:gap-6 hover:bg-black hover:bg-opacity-10 p-4 rounded-md">
-            <h4 className="font-semibold text-titles text-2xl">Contact</h4>
+          <div className="text-[#eee] text-base flex flex-col gap-4 md:gap-6 hover:bg-black hover:bg-opacity-10 p-4 rounded-md">
+            <h4 className="font-semibold text-white text-2xl">Contact</h4>
             <p className="text-base">
               6A D-Sha Street, Lekki Palm City Estate, <br /> Addo Road, Ajah, Lagos, Nigeria
             </p>
-            <a
+            <Link
               href="mailto:info@baselinksng.com"
               className="underline mt-1 text-base flex items-center gap-1 font-semibold"
             >
               <CiMail className="text-xl font-semibold" /> <span>info@baselinksng.com</span>
-            </a>
+            </Link>
           </div>
 
           <button
@@ -84,14 +107,12 @@ function Footer() {
           </button>
         </footer>
         <Space />
-        <div className="text-center mt-4 p-4 text-lightBg text-opacity-80 border-t border-t-backgrounds">
+        <div className="text-center mt-4 p-4 text-[#eee] text-opacity-80 border-t border-t-backgrounds">
           <Space />
           <span>Copyright &copy; All rights reserved by Baselinks Academy {year}</span>
         </div>
       </div>
-      <Space />
-
-    </motion.div>
+        </motion.div>
   );
 }
 
