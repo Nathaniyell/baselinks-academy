@@ -119,7 +119,7 @@ const Auth = () => {
                     </div>
                 </div>
             </motion.div>
-            <Space  />
+            <Space border="md:hidden lg:block" />
         </div>
     );
 };

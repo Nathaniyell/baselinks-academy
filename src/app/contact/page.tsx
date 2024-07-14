@@ -91,7 +91,8 @@ const Page = () => {
             Send Message
           </motion.button>
         </form>      </motion.section>
-      <Space />
+        <Space border="md:hidden lg:block" />
+        <Space border="md:hidden lg:block" />
     </div>
   )
 }

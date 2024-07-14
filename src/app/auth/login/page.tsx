@@ -59,6 +59,10 @@ const Login = () => {
     };
 
     return (
+        <>
+         <Space border="md:hidden lg:block" />
+         
+    
         <div className='w-11/12 md:w-full mx-auto flex flex-col items-center justify-center min-h-screen'>
             <motion.div 
              animate={{ y: 0, opacity: 1 }}
@@ -128,8 +132,10 @@ const Login = () => {
                 </div>
             </motion.div>
             <ToastContainer />
-            <Space  />
+            <Space border="md:hidden lg:block" />
+            <Space border="md:hidden lg:block" />
         </div>
+        </>
     )
 }
 

@@ -140,6 +140,7 @@ const CourseDetail = ({ params }: CourseDetailProps) => {
         </div>
       </div>
       <Space border="md:hidden lg:block" />
+      <Space border="md:hidden lg:block" />
     </>
   );
 };
