@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { courses } from '@/lib/courses';
-import { CourseType } from '@/utils/courseTypes';
+import { SingleCourseType } from '@/utils/courseTypes';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumb from '@/components/breadcrumb/Breadcrumb';
@@ -15,8 +15,8 @@ interface CourseDetailProps {
   params: { id: string };
 }
 
-const getCourseById = (id: string): CourseType | undefined => {
-  return courses.find((course: CourseType) => course.id.toString() === id);
+const getCourseById = (id: string): SingleCourseType | undefined => {
+  return courses.find((course: SingleCourseType) => course.id.toString() === id);
 };
 
 const CourseDetail = ({ params }: CourseDetailProps) => {
@@ -100,7 +100,7 @@ const CourseDetail = ({ params }: CourseDetailProps) => {
             </div>
             <div>
               <h1 className='font-semibold text-lg'>Quiz</h1>
-              {course.quiz.questions.map((q, questionIndex) => (
+              {course?.quiz.questions.map((q, questionIndex) => (
                 <div key={questionIndex} className='mt-4'>
                   <p className='font-[500] '>{questionIndex + 1}. {" "} {q.question}</p>
                   <ul className='list-none ml-6'>

@@ -10,6 +10,17 @@ export interface CourseType {
     price: number;
     students: number;
     tag: string;
+}
+export interface SingleCourseType {
+    title: string;
+    description: string;
+    videoLink: string;
+    image: StaticImageData;
+    stars: number;
+    id: string;
+    price: number;
+    students: number;
+    tag: string;
     quiz: {
         questions: {
             question: string;
