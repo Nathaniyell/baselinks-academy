@@ -30,9 +30,9 @@ export default function RootLayout({
         >
           <NavBar />
           
-          <Space border=" h-[1rem] md:h-[5rem] lg:h-[2.7rem] xs:h-[7rem]" />
+          <Space border=" h-[1.4rem] md:h-[2.1rem] lg:h-[2.7rem]" />
           {children}
-          <Space border=" h-[2rem] md:h-[5rem] lg:h-[3.8rem] xs:h-[7rem]" />
+          <Space border=" h-[2rem] md:h-[5rem] lg:h-[3.8rem]" />
 
                           <Footer />
         </body>
