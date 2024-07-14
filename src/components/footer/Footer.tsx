@@ -42,22 +42,22 @@ function Footer() {
       transition={{ delay: 2, duration: 1 }}
       className="bg-backgrounds"
     >
-      <FramerAnimation className="text-white border-b p-8 md:p-14 flex flex-col gap-10 md:flex-row justify-between items-center">
+      <FramerAnimation className="text-white border-b p-8 md:p-10 flex flex-col gap-10 md:flex-row justify-between items-center">
         <h1 className="text-white w-full md:w-1/2 lg:w-2/5 mx-auto md:mx-0 text-2xl md:text-3xl">
-     Start learning with 1000 students around the world!
+     Start learning with 1000+ students around the world!
         </h1>
-<div className="flex items-cener gap-6">
+<div className="flex flex-col lg:flex-row items-center gap-6 lg:w-2/5">
         <LinkBtn
           href="/auth/register"
           variant="titles"
-          className="text-white  shadow-md rounded border-lightBg"
+          className="text-white w-full shadow-lg rounded hover:bg-amber-600 border-lightBg"
           >
         Get started
         </LinkBtn>
         <LinkBtn
-          href="/auth/register"
+          href="/courses"
           variant="background2"
-          className="text-white  shadow-md  rounded border-lightBg"
+          className="text-white w-full shadow-lg rounded border-lightBg hover:bg-amber-600"
           >
          Browse all courses
         </LinkBtn>
@@ -106,9 +106,9 @@ function Footer() {
             <BsArrowBarUp className="text-2xl" />
           </button>
         </footer>
-        <Space />
-        <div className="text-center mt-4 p-4 text-[#eee] text-opacity-80 border-t border-t-backgrounds">
-          <Space />
+        
+        <div className="text-center mt-4 p-4 text-[#eee] text-opacity-80 border-t border-t-lightBg">
+          
           <span>Copyright &copy; All rights reserved by Baselinks Academy {year}</span>
         </div>
       </div>

@@ -10,4 +10,12 @@ export interface CourseType {
     price: number;
     students: number;
     tag: string;
-}
+    quiz: {
+        questions: {
+            question: string;
+            options: string[];
+            answer: string;
+        }[];
+    };
+    exercise: string;
+}[]

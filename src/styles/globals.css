@@ -33,12 +33,12 @@
   
     /* Track */
     ::-webkit-scrollbar-track {
-      @apply bg-backgrounds;
+      @apply bg-titles;
     }
   
     /* Handle */
     ::-webkit-scrollbar-thumb {
-      @apply bg-titles;
+      @apply bg-white;
     }
   
     .scroll-box span{

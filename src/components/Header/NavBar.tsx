@@ -145,8 +145,8 @@ export default function NavBar() {
               >
                 {/* <Link href="/" className="bg-backgrounds p-2 rounded-lg">my courses</Link> */}
               
-                  <div className="bg-titles p-2 text-white shadow-md border border-titles rounded-md">
-                    {user ? (<button onClick={signOutFromApp}>Logout</button>) : (<Link href="/auth/login">Sign in</Link>)}
+                  <div>
+                    {user ? (<div className="flex gap-2 items-center"> <span className="text-blue-600 underline">{user.email}</span> <button onClick={signOutFromApp} className="border-titles  p-2 text-white shadow-md border bg-titles rounded-md">Logout</button></div>) : (<Link className="border-titles  p-2 text-white shadow-md border bg-titles rounded-md" href="/auth/login">Sign in</Link>)}
 
                   </div>
             

@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import investSvg2 from "../../public/invest3.svg";
+import heroImg from "../../public/images/heroImg.jpg"
 import Space from "@/components/Space";
 import Search from "@/utils/Search";
 import { Suspense } from "react";
@@ -37,18 +38,21 @@ export default function Home() {
             </p>
           </div>
           <Suspense>
+            <div className="lg:w-3/5">
+
             <Search />
+            </div>
           </Suspense>
         </motion.div>
         <motion.div
           animate={{ x: 0, opacity: 1 }}
           initial={{ opacity: 0, x: 100 }}
           transition={{ delay: 0.1, duration: 0.8 }}
-          className="md:flex md:justify-end md:items-center"
+          className="md:flex md:justify-end md:items-center lg:w-[50%]"
         >
           <Image
-            className="size-full lg:w-[70%]"
-            src={investSvg2}
+            className="size-full"
+            src={heroImg}
             alt="Hero"
           />
         </motion.div>
