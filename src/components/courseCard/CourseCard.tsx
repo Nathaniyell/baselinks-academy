@@ -8,14 +8,14 @@ import { BiUser } from 'react-icons/bi';
 const CourseCard: React.FC<CourseType> = ({ id, title, description, videoLink, stars, price, students, tag, image }) => {
   return (
     <Link href={`/courses/${id}`} className="block">
-      <div className="bg-white shadow overflow-hidden flex flex-col h-full">
+      <div className="bg-white rounded-md shadow overflow-hidden flex flex-col h-full">
         <div className="relative h-48">
           <Suspense fallback={<div>Loading...</div>}>
             <Image
               src={image}
               alt={title}
        
-              className="w-full size-full"
+              className="w-full size-full rounded-t"
             />
           </Suspense>
         </div>
