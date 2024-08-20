@@ -20,7 +20,7 @@ interface LinkBtnProps {
       <Link
         href={href}
         className={clsx(
-          `px-6 py-2 flex group text-white justify-center items-center min-w-10 min-h-8 transition-all ease-in-out duration-200 text-center text-lg md:text-base bg-${variant} border hover:shadow`,
+          `px-6 py-2 flex group text-white rounded-md justify-center items-center min-w-10 min-h-8 transition-all ease-in-out duration-200 text-center text-lg md:text-base bg-${variant} border hover:shadow`,
           className
         )}
       >
